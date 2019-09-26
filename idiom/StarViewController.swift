@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StarViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class StarViewController: BaseViewController, UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return starArray.count
     }

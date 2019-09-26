@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ExtendViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ExtendViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var hightString = ""
         if((self.idiomDictionary.object(forKey: "content")) != nil){

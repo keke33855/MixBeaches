@@ -13,16 +13,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var appManager = AppManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
-
-        let idiomVC = IdiomHomeViewController()
        
-        let idiomNav = UINavigationController(rootViewController: idiomVC)
-        self.window?.rootViewController = idiomNav
+        self.window?.rootViewController = LaunchViewController.instance()
         self.window?.makeKeyAndVisible()
         return true
     }
