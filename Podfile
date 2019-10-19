@@ -1,11 +1,11 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'idiom' do
+target 'IdiomBus' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for idiom
+  # Pods for IdiomBus
   pod 'AFNetworking'
   pod 'IQKeyboardManager'
   pod 'WSProgressHUD'
@@ -23,15 +23,5 @@ target 'idiom' do
   pod 'Moya/RxSwift', '13.0.1'
   pod 'Alamofire', '4.8.2'
   pod 'ObjectMapper', '3.4.2'
-
-  target 'idiomTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'idiomUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 
 end
