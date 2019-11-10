@@ -1,6 +1,0 @@
-framework module Pods_IdiomBus {
-  umbrella header "Pods-IdiomBus-umbrella.h"
-
-  export *
-  module * { export * }
-}
