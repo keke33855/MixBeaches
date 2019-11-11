@@ -28,6 +28,7 @@ target 'ChengZiPuzzle' do
   
   # effective
   pod 'Then'
+  pod 'CountdownLabel'
   
   # Push
   pod 'JPush', '3.1.0'

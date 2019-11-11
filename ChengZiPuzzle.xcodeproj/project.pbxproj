@@ -89,6 +89,11 @@
 		A9AE745B23783AD80087057E /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE745A23783AD80087057E /* Puzzle.swift */; };
 		A9AE745E237847000087057E /* PuzzleImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE745C237847000087057E /* PuzzleImageCollectionViewCell.swift */; };
 		A9AE745F237847000087057E /* PuzzleImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9AE745D237847000087057E /* PuzzleImageCollectionViewCell.xib */; };
+		A9AE746223793C510087057E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE746123793C510087057E /* GameViewController.swift */; };
+		A9AE746523793C7C0087057E /* GameViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9AE746423793C7C0087057E /* GameViewController.storyboard */; };
+		A9D1CEE72379487A00F5D51D /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1CEE22379486800F5D51D /* BoardView.swift */; };
+		A9D1CEE82379487E00F5D51D /* FifteenBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1CEE32379486800F5D51D /* FifteenBoard.swift */; };
+		A9D1CEEA2379569A00F5D51D /* GameLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1CEE92379569A00F5D51D /* GameLevel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,6 +187,11 @@
 		A9AE745A23783AD80087057E /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		A9AE745C237847000087057E /* PuzzleImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A9AE745D237847000087057E /* PuzzleImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PuzzleImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		A9AE746123793C510087057E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		A9AE746423793C7C0087057E /* GameViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameViewController.storyboard; sourceTree = "<group>"; };
+		A9D1CEE22379486800F5D51D /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		A9D1CEE32379486800F5D51D /* FifteenBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifteenBoard.swift; sourceTree = "<group>"; };
+		A9D1CEE92379569A00F5D51D /* GameLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevel.swift; sourceTree = "<group>"; };
 		ECE5E21FBDF7FBAB81B2F8B6 /* Pods_ChengZiPuzzle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChengZiPuzzle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -260,6 +270,7 @@
 		A9138DA8233B70DF009400A3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A9AE7466237944230087057E /* GamePage */,
 				A9AE744F237824E40087057E /* GamePhotoPage */,
 				A9AE744723781CD80087057E /* GameSelectPage */,
 				A9138DAE233B7152009400A3 /* BaseViewController.swift */,
@@ -294,6 +305,7 @@
 			children = (
 				A9138DBC233B7163009400A3 /* APIModel */,
 				A9AE745A23783AD80087057E /* Puzzle.swift */,
+				A9D1CEE92379569A00F5D51D /* GameLevel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -486,6 +498,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A9AE7466237944230087057E /* GamePage */ = {
+			isa = PBXGroup;
+			children = (
+				A9D1CEEB2379806000F5D51D /* View */,
+				A9AE746123793C510087057E /* GameViewController.swift */,
+				A9AE746423793C7C0087057E /* GameViewController.storyboard */,
+			);
+			path = GamePage;
+			sourceTree = "<group>";
+		};
+		A9D1CEEB2379806000F5D51D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9D1CEE22379486800F5D51D /* BoardView.swift */,
+				A9D1CEE32379486800F5D51D /* FifteenBoard.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -553,6 +584,7 @@
 				A9AE745F237847000087057E /* PuzzleImageCollectionViewCell.xib in Resources */,
 				A9AE745623782AF90087057E /* FZZJ-TTMBFONT.ttf in Resources */,
 				A9138E4E233B735B009400A3 /* WebViewController.storyboard in Resources */,
+				A9AE746523793C7C0087057E /* GameViewController.storyboard in Resources */,
 				A9138E54233B7448009400A3 /* HomeViewController.xib in Resources */,
 				A9AE744C23781D8B0087057E /* GamePhotoSelectViewController.storyboard in Resources */,
 			);
@@ -615,6 +647,7 @@
 				A9138E2D233B72E5009400A3 /* UIDevice+Additions.swift in Sources */,
 				0433FDA1230CE84A00AC613A /* AppDelegate.swift in Sources */,
 				A9138E3A233B72EC009400A3 /* Observable+Additions.swift in Sources */,
+				A9D1CEEA2379569A00F5D51D /* GameLevel.swift in Sources */,
 				A9138E2A233B72E5009400A3 /* UIFont+Additions.swift in Sources */,
 				A90E435C233CA834006867E4 /* Observable+ObjectMapper.swift in Sources */,
 				A9AE744823781D600087057E /* BaseViewController.swift in Sources */,
@@ -625,6 +658,7 @@
 				A9138E19233B72BE009400A3 /* GlobalFunc.swift in Sources */,
 				A9138E2B233B72E5009400A3 /* UINavigation+Additions.swift in Sources */,
 				A9138E49233B7322009400A3 /* BaseTableViewCell.swift in Sources */,
+				A9D1CEE82379487E00F5D51D /* FifteenBoard.swift in Sources */,
 				A9AE74512378265A0087057E /* GameSelectViewController.swift in Sources */,
 				A90E4358233CA015006867E4 /* LaunchViewController.swift in Sources */,
 				A9138E1D233B72BE009400A3 /* SNSShareItem.swift in Sources */,
@@ -654,6 +688,7 @@
 				A9AE745E237847000087057E /* PuzzleImageCollectionViewCell.swift in Sources */,
 				A9138E35233B72E5009400A3 /* UIImageView+kf.swift in Sources */,
 				A9138E2F233B72E5009400A3 /* UIButton+kf.swift in Sources */,
+				A9AE746223793C510087057E /* GameViewController.swift in Sources */,
 				A9138E33233B72E5009400A3 /* UIActivityViewController+Addtions.swift in Sources */,
 				A9AE744A23781D7A0087057E /* GamePhotoSelectViewController.swift in Sources */,
 				A9138E12233B7242009400A3 /* AppManager.swift in Sources */,
@@ -662,6 +697,7 @@
 				A9138E0F233B7170009400A3 /* GlobalImports.swift in Sources */,
 				A9138E14233B72B1009400A3 /* Rx+Codable.swift in Sources */,
 				A9138E4D233B735B009400A3 /* WebViewController.swift in Sources */,
+				A9D1CEE72379487A00F5D51D /* BoardView.swift in Sources */,
 				A9138E26233B72E5009400A3 /* Reactive+UIViewController.swift in Sources */,
 				A9138E43233B72EC009400A3 /* Array+Additions.swift in Sources */,
 				A9138E24233B72DC009400A3 /* DividingLineable.swift in Sources */,

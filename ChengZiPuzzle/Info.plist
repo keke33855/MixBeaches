@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>成语沙龙</string>
+	<string>ChengZiPuzzle</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -22,6 +22,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>We need access your camera to use app. We won't use photo data without your permission.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need access your photo library to use app. We won't use photo data without your permission.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>FZZJ-TTMBFONT.ttf</string>

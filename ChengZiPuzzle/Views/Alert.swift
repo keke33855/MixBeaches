@@ -32,11 +32,11 @@ enum DefaultAlertAction: AlertActionType {
     var title: String? {
         switch self {
         case .ok:
-            return "确定"
+            return "OK"
         case .no:
-            return "不要"
+            return "NO"
         case .yes:
-            return "好的"
+            return "YES"
         }
     }
 

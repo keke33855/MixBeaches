@@ -30,6 +30,9 @@
                                 <rect key="frame" x="15.999999999999996" y="52" width="53.666666666666657" height="53"/>
                                 <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                                 <state key="normal" image="backBtn"/>
+                                <connections>
+                                    <action selector="backTapped:" destination="qLO-Ed-bNo" eventType="touchUpInside" id="se7-BW-9kH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m43-5S-xGU">
                                 <rect key="frame" x="344.33333333333331" y="52" width="53.666666666666686" height="53"/>

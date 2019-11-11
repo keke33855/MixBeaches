@@ -21,6 +21,11 @@ class GameSelectViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
 
+    // MARK: - Actions
+    @IBAction func backTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func highScoresTapped(_ sender: Any) {
         
     }

@@ -10,8 +10,15 @@ import UIKit
 
 class GamePhotoSelectViewController: BaseViewController {
     
+    lazy var imagePicker: UIImagePickerController = {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        return picker
+    }()
+    
     lazy var localPuzzles: [Puzzle] = {
-        return (1...10)
+        return (1...12)
             .map { String($0) }
             .compactMap { imgName -> Puzzle? in
                 guard let image = UIImage(named: imgName) else {
@@ -58,10 +65,36 @@ class GamePhotoSelectViewController: BaseViewController {
     }
     
     @IBAction func photoLabTapped(_ sender: Any) {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+            let alert = Alert()
+            alert.show(title: "Hint",
+                       message: "Can't open photo library, Maybe you don't have permission.",
+                       preferredStyle: .alert,
+                       actions: [DefaultAlertAction.ok(nil)],
+                       completion: nil)
+            return
+        }
+        imagePicker.sourceType = .photoLibrary
+        navigationController?.present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func cameraTapped(_ sender: Any) {
-        
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            let alert = Alert()
+            alert.show(title: "Hint",
+                       message: "No camera can use",
+                       preferredStyle: .alert,
+                       actions: [DefaultAlertAction.ok(nil)],
+                       completion: nil)
+            return
+        }
+        imagePicker.sourceType = .camera
+        navigationController?.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    private func gotoGamePage(with puzzle: Puzzle) {
+        let gamePage = GameViewController.instance(puzzle: puzzle)
+        navigationController?.pushViewController(gamePage, animated: true)
     }
 }
 
@@ -83,9 +116,32 @@ extension GamePhotoSelectViewController: UICollectionViewDataSource {
 
 extension GamePhotoSelectViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         collectionView.deselectItem(at: indexPath, animated: true)
+        guard let puzzle = localPuzzles.safeElement(indexPath.row) else {
+            return
+        }
         
+        gotoGamePage(with: puzzle)
+    }
+}
+
+extension GamePhotoSelectViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
+        guard var image = info[.originalImage] as? UIImage else {
+            dismiss(animated: true, completion: nil)
+            return
+        }
+        
+        if let editedImage = info[.originalImage] as? UIImage {
+            image = editedImage
+        }
+        
+        dismiss(animated: true) { [weak self] in
+            let puzzle = Puzzle(image: image)
+            self?.gotoGamePage(with: puzzle)
+        }
     }
 }
 

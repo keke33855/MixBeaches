@@ -9,5 +9,5 @@
 import Foundation
 
 struct Puzzle {
-    var image: UIImage?
+    var image: UIImage
 }
