@@ -18,7 +18,7 @@ class GamePhotoSelectViewController: BaseViewController {
     }()
     
     lazy var localPuzzles: [Puzzle] = {
-        return (1...12)
+        return (1...14)
             .map { String($0) }
             .compactMap { imgName -> Puzzle? in
                 guard let image = UIImage(named: imgName) else {
@@ -93,7 +93,7 @@ class GamePhotoSelectViewController: BaseViewController {
     }
     
     private func gotoGamePage(with puzzle: Puzzle) {
-        let gamePage = GameViewController.instance(puzzle: puzzle)
+        let gamePage = GameViewController.instance(puzzle: puzzle, gameLevel: UserDefaults.getStoredGameLevel())
         navigationController?.pushViewController(gamePage, animated: true)
     }
 }

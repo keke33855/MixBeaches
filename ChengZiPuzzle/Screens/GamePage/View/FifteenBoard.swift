@@ -27,15 +27,40 @@
 import Foundation
 
 class FifteenBoard {
-    var state : [[Int]] = [
+    init(numOfRows: Int) {
+        rows = numOfRows
+        cols = numOfRows
+        
+        var srcArray = (0..<(rows*rows)).map { $0 }
+        srcArray.removeFirst()
+        srcArray.append(0)
+        
+        var rowsArray = [[Int]]()
+        var columnArray = [Int]()
+        for i in srcArray {
+            if i % rows == 1 || i == 0 {
+                if i == 0 {
+                    columnArray.append(0)
+                }
+                if !columnArray.isEmpty {
+                    rowsArray.append(columnArray)
+                }
+                columnArray.removeAll()
+            }
+            columnArray.append(i)
+        }
+        state = rowsArray
+    }
+    
+    var state: [[Int]] = [
         [1, 2, 3, 4],
         [5, 6, 7 ,8],
         [9, 10, 11, 12],
         [13, 14, 15, 0]  // 0 => empty
     ]
 
-    let rows = 4
-    let cols = 4
+    var rows: Int = 4
+    var cols: Int = 4
     
     func random(_ n:Int) -> Int {
         return Int(arc4random_uniform(UInt32(n)))
@@ -138,9 +163,10 @@ class FifteenBoard {
     
     func isSolved() -> Bool {
         var comparison = 1
+        let totalValue = rows * cols
         for r in 0..<rows {
             for c in 0..<cols {
-                if state[r][c] != comparison%16 {
+                if state[r][c] != comparison%totalValue {
                     return false
                 } // end if
                 comparison = comparison + 1
@@ -152,9 +178,10 @@ class FifteenBoard {
     // reset board to default
     func resetBoard() {
         var set = 1
+        let totalValue = rows * cols
         for r in 0..<rows {
             for c in 0..<cols {
-                state[r][c] = set%16
+                state[r][c] = set%totalValue
                 set = set + 1
             }
         }

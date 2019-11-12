@@ -34,4 +34,9 @@ class GameSelectViewController: BaseViewController {
         let puzzleSelectPage = GamePhotoSelectViewController.instance()
         navigationController?.pushViewController(puzzleSelectPage, animated: true)
     }
+    
+    @IBAction func gameLevelTapped(_ sender: Any) {
+        let gameLevelPage = GameLevelViewController.instance()
+        gameLevelPage.show()
+    }
 }

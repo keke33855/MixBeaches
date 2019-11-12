@@ -27,7 +27,16 @@ import UIKit
 
 class BoardView: UIView {
     
-    let board = FifteenBoard()
+    init(frame: CGRect, numOfRows: Int) {
+        super.init(frame: frame)
+        board = FifteenBoard(numOfRows: numOfRows)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    var board = FifteenBoard(numOfRows: 4)
     
     /*
     // Only override draw() if you perform custom drawing.
@@ -58,11 +67,11 @@ class BoardView: UIView {
         super.layoutSubviews() // let autolayout engine finish first
         
         let boardSquare = boardRect()  // determine region to hold tiles (see below)
-        let tileSize = (boardSquare.width) / 4.0
+        let tileSize = (boardSquare.width) / CGFloat(board.rows)
         let tileBounds = CGRect(x: 0, y: 0, width: tileSize, height: tileSize)
         
-        for r in 0 ..< 4 {      // manually set the bounds, and of each tile
-            for c in 0 ..< 4 {
+        for r in 0 ..< board.rows {      // manually set the bounds, and of each tile
+            for c in 0 ..< board.cols {
                 let tile = board.getTile(atRow: r, atColumn: c)
                 if tile > 0 {
                     if let button = self.viewWithTag(tile) {
@@ -78,8 +87,8 @@ class BoardView: UIView {
     } // end layoutSubviews()
     
     func switchTileImages(_ imageOn : Bool) {
-        for r in 0..<4 {
-            for c in 0..<4 {
+        for r in 0..<board.rows {
+            for c in 0..<board.cols {
                 let tile = board.getTile(atRow: r, atColumn: c)
                 if tile > 0 {
                     let button = self.viewWithTag(tile) as! UIButton

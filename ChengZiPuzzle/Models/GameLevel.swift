@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum GameLevel {
+enum GameLevel: Int {
     case level1
     case level2
     case level3
     
     static func defaultInstance() -> GameLevel {
-        return .level2
+        return .level1
     }
     
     var title: String {
@@ -44,9 +44,9 @@ enum GameLevel {
         case .level1:
             return 5 * 60
         case .level2:
-            return 6 * 60
-        case .level3:
             return 7 * 60
+        case .level3:
+            return 9 * 60
         }
     }
 }

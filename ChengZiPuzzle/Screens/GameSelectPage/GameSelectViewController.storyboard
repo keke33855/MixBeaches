@@ -66,6 +66,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <state key="highlighted" backgroundImage="btnHighlight"/>
+                                        <connections>
+                                            <action selector="gameLevelTapped:" destination="qLO-Ed-bNo" eventType="touchUpInside" id="nAU-BQ-hfr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKA-zy-smX">
                                         <rect key="frame" x="0.0" y="286.99999999999994" width="308.66666666666669" height="151.33333333333331"/>

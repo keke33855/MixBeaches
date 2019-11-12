@@ -16,7 +16,9 @@ class GameViewController: BaseViewController {
     
     private var isFirst = true
     
-    @IBOutlet private weak var playView: BoardView!
+    private var playView: BoardView?
+    
+    @IBOutlet private weak var playRootView: UIView!
     @IBOutlet weak var puzzleOriginImgView: UIImageView!
     
     @IBOutlet private weak var showOriginBtn: UIButton!
@@ -44,8 +46,7 @@ class GameViewController: BaseViewController {
     }
     
     // MARK: - Life cycle
-    static func instance(puzzle: Puzzle,
-                         gameLevel: GameLevel = GameLevel.defaultInstance()) -> GameViewController {
+    static func instance(puzzle: Puzzle, gameLevel: GameLevel) -> GameViewController {
         let vc = GameViewController.initFromStoryboard()
         vc.puzzle = puzzle
         vc.gameLevel = gameLevel
@@ -62,7 +63,8 @@ class GameViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        guard puzzle?.image != nil else {
+        guard puzzle?.image != nil,
+            let gameLevel = self.gameLevel else {
             let alert = Alert()
             alert.show(title: "Hint",
                        message: "No puzzle image selected.",
@@ -73,7 +75,7 @@ class GameViewController: BaseViewController {
             return
         }
         
-        countDownLbl.addTime(time: 5 * 60)
+        countDownLbl.addTime(time: gameLevel.countDownTime)
         countDownLbl.start()
     }
     
@@ -96,7 +98,11 @@ class GameViewController: BaseViewController {
             return
         }
         
-        var buttonViewTag = 0
+        let playView = BoardView(frame: playRootView.bounds, numOfRows: numOfRow)
+        self.playView = playView
+        playRootView.addSubview(playView)
+        
+        var buttonViewTag = 1
         let buttonWidth: CGFloat = playView.bounds.width / CGFloat(numOfRow)
         for row in 0 ..< numOfRow {
             for column in 0 ..< numOfRow {
@@ -112,7 +118,7 @@ class GameViewController: BaseViewController {
                 let button = UIButton(frame: frame)
                 button.adjustsImageWhenHighlighted = false
                 button.tag = buttonViewTag
-                button.setBackgroundImage(imagePieces.safeElement(buttonViewTag),
+                button.setBackgroundImage(imagePieces.safeElement(buttonViewTag - 1),
                                           for: .normal)
                 buttonViewTag += 1
                 button.addTarget(self, action: #selector(puzzlePieceTapped(_:)), for: .touchUpInside)
@@ -135,7 +141,7 @@ class GameViewController: BaseViewController {
     
     @objc private func puzzlePieceTapped(_ sender: Any) {
         guard let puzzlePiece = sender as? UIButton,
-            let pos = playView.board.getRowAndColumn(forTile: puzzlePiece.tag) else {
+            let pos = playView?.board.getRowAndColumn(forTile: puzzlePiece.tag) else {
             return
         }
         
@@ -143,6 +149,7 @@ class GameViewController: BaseViewController {
         var buttonCenter = puzzlePiece.center
         
         var slide = true
+        guard let playView = self.playView else { return }
         if playView.board.canSlideTileUp(atRow: pos.row, Column: pos.column) {
             buttonCenter.y -= buttonBounds.size.height
         } else if playView.board.canSlideTileDown(atRow: pos.row, Column: pos.column) {

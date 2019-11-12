@@ -9,6 +9,20 @@
 import Foundation
 
 extension UserDefaults {
+    
+    static func getStoredGameLevel() -> GameLevel {
+        let levelValue = UserDefaults.IntValueManager.int(forKey: .gameLevel)
+        return GameLevel(rawValue: levelValue) ?? .level1
+    }
+    
+    struct IntValueManager: IntUserDefaultable {
+        private init() {}
+        
+        enum IntDefaultKey: String {
+            case gameLevel
+        }
+    }
+    
     struct FlagManager: BoolUserDefaultable {
 
         private init() {}
