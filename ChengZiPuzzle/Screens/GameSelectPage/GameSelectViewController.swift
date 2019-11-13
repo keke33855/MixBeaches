@@ -39,4 +39,8 @@ class GameSelectViewController: BaseViewController {
         let gameLevelPage = GameLevelViewController.instance()
         gameLevelPage.show()
     }
+    
+    @IBAction func settingTapped(_ sender: Any) {
+        SettingsViewController.instance().show()
+    }
 }

@@ -36,7 +36,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="354" height="404"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SelectLevel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVK-tv-uuu">
-                            <rect key="frame" x="76.666666666666686" y="44" width="201" height="57"/>
+                            <rect key="frame" x="48.333333333333343" y="44" width="257.66666666666663" height="58.333333333333343"/>
                             <fontDescription key="fontDescription" name="FZZJ-TTMBFONT" family="FZZJ-TTMBFONT" pointSize="50"/>
                             <color key="textColor" red="0.27058823529999998" green="0.20000000000000001" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>

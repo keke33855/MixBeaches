@@ -28,7 +28,8 @@ extension UserDefaults {
         private init() {}
 
         enum BoolDefaultKey: String {
-            case isSupportMultipleCardSets
+            case isBackgroundSoundOn
+            case isPlaySoundOn
             
             func toggle() {
                 var boolValue = UserDefaults.FlagManager.bool(forKey: self)

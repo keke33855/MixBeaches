@@ -20,6 +20,12 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
 
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        AppMusicPlayer.shared.playIfCan()
+    }
 
     // MARK: - functional
     @IBAction func playGame(_ sender: Any) {

@@ -38,6 +38,9 @@
                                 <rect key="frame" x="344.33333333333331" y="52" width="53.666666666666686" height="53"/>
                                 <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                                 <state key="normal" image="settingsBtn"/>
+                                <connections>
+                                    <action selector="settingTapped:" destination="qLO-Ed-bNo" eventType="touchUpInside" id="r7P-aE-mRa"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="The mascot" translatesAutoresizingMaskIntoConstraints="NO" id="a1B-o5-urx">
                                 <rect key="frame" x="100" y="76" width="214" height="315.66666666666669"/>

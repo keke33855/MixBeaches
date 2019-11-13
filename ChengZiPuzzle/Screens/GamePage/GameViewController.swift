@@ -8,6 +8,7 @@
 
 import UIKit
 import CountdownLabel
+import AVKit
 
 class GameViewController: BaseViewController {
 
@@ -17,6 +18,10 @@ class GameViewController: BaseViewController {
     private var isFirst = true
     
     private var playView: BoardView?
+    
+    lazy var tapPlayer: AVAudioPlayer? = {
+       return GameViewController.createAudioPlayer(name: "Chomp", type: "wav")
+    }()
     
     @IBOutlet private weak var playRootView: UIView!
     @IBOutlet weak var puzzleOriginImgView: UIImageView!
@@ -145,6 +150,8 @@ class GameViewController: BaseViewController {
             return
         }
         
+        tapPlayer?.play()
+        
         let buttonBounds = puzzlePiece.bounds
         var buttonCenter = puzzlePiece.center
         
@@ -181,6 +188,19 @@ class GameViewController: BaseViewController {
     
     private func navigateToResultScreen(isWin: Bool) {
         
+    }
+    
+    // MARK: - prepare game
+    static func createAudioPlayer(name : String, type: String) -> AVAudioPlayer? {
+        guard let path = Bundle.main.path(forResource: name,
+                                          ofType: type) else {
+                                            return nil
+        }
+        let assetUrl = URL(fileURLWithPath: path)
+        let player = try? AVAudioPlayer(contentsOf: assetUrl, fileTypeHint: type)
+        player?.prepareToPlay()
+        player?.volume = 0.9
+        return player
     }
 }
 
