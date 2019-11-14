@@ -10,6 +10,11 @@ import UIKit
 import CountdownLabel
 import AVKit
 
+enum GameResult {
+    case win(String)
+    case fail
+}
+
 class GameViewController: BaseViewController {
 
     private var puzzle: Puzzle?
@@ -140,6 +145,10 @@ class GameViewController: BaseViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func settingTapped(_ sender: Any) {
+        SettingsViewController.instance().show()
+    }
+    
     @IBAction func changeOriginViewAppear(_ sender: Any) {
         showOriginImage.toggle()
     }
@@ -150,7 +159,9 @@ class GameViewController: BaseViewController {
             return
         }
         
-        tapPlayer?.play()
+        if !UserDefaults.FlagManager.bool(forKey: .isPlaySoundOff) {
+            tapPlayer?.play()
+        }
         
         let buttonBounds = puzzlePiece.bounds
         var buttonCenter = puzzlePiece.center
@@ -181,13 +192,28 @@ class GameViewController: BaseViewController {
             
             if (playView.board.isSolved()) {
                 countDownLbl.pause()
-                navigateToResultScreen(isWin: true)
+                navigateToResultScreen(gameResult: .win(countDownLbl.text))
             }
         }
     }
     
-    private func navigateToResultScreen(isWin: Bool) {
+    private func replayGame() {
+        playView?.switchTileOrder(true)
+        playView?.layoutSubviews()
         
+        countDownLbl.addTime(time: gameLevel?.countDownTime ?? 0)
+        countDownLbl.start()
+    }
+    
+    private func navigateToResultScreen(gameResult: GameResult) {
+        ResultViewController.show(gameResult: gameResult) { [weak self] (type) in
+            switch type {
+            case .replay:
+                self?.replayGame()
+            case .returnHome:
+                self?.navigationController?.popToRootViewController(animated: true)
+            }
+        }
     }
     
     // MARK: - prepare game
@@ -207,6 +233,6 @@ class GameViewController: BaseViewController {
 extension GameViewController: CountdownLabelDelegate {
     func countdownFinished() {
         countDownLbl.textColor = .gray
-        navigateToResultScreen(isWin: false)
+        navigateToResultScreen(gameResult: .fail)
     }
 }

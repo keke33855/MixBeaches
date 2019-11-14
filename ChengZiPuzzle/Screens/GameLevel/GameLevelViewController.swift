@@ -64,7 +64,7 @@ class GameLevelViewController: BaseViewController {
                        delay: 0,
                        options: [.curveEaseInOut],
                        animations: { [weak self] in
-                        self?.view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+                        self?.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
                         self?.view.layoutIfNeeded()
         },
                        completion: nil)

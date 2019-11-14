@@ -24,7 +24,7 @@ class HomeViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        AppMusicPlayer.shared.playIfCan()
+        AppMusicPlayer.shared.play(force: false)
     }
 
     // MARK: - functional

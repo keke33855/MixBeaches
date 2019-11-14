@@ -91,7 +91,6 @@
 		A9AE744E23781EC90087057E /* AppDelegate+JPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE744D23781EC90087057E /* AppDelegate+JPush.swift */; };
 		A9AE74512378265A0087057E /* GameSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE74502378265A0087057E /* GameSelectViewController.swift */; };
 		A9AE7453237826680087057E /* GameSelectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9AE7452237826680087057E /* GameSelectViewController.storyboard */; };
-		A9AE745623782AF90087057E /* FZZJ-TTMBFONT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9AE745523782AF90087057E /* FZZJ-TTMBFONT.ttf */; };
 		A9AE745B23783AD80087057E /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE745A23783AD80087057E /* Puzzle.swift */; };
 		A9AE745E237847000087057E /* PuzzleImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE745C237847000087057E /* PuzzleImageCollectionViewCell.swift */; };
 		A9AE745F237847000087057E /* PuzzleImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9AE745D237847000087057E /* PuzzleImageCollectionViewCell.xib */; };
@@ -100,6 +99,9 @@
 		A9CA51D8237C3EEA00C29805 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA51D6237C3EEA00C29805 /* SettingsViewController.swift */; };
 		A9CA51D9237C3EEA00C29805 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CA51D7237C3EEA00C29805 /* SettingsViewController.xib */; };
 		A9CA51DB237C450700C29805 /* AppMusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA51DA237C450700C29805 /* AppMusicPlayer.swift */; };
+		A9CA51DF237D388700C29805 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA51DD237D388700C29805 /* ResultViewController.swift */; };
+		A9CA51E0237D388700C29805 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CA51DE237D388700C29805 /* ResultViewController.xib */; };
+		A9CA51E2237D471B00C29805 /* FZZJ-TTMBFONT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9AE745523782AF90087057E /* FZZJ-TTMBFONT.ttf */; };
 		A9D1CEE72379487A00F5D51D /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1CEE22379486800F5D51D /* BoardView.swift */; };
 		A9D1CEE82379487E00F5D51D /* FifteenBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1CEE32379486800F5D51D /* FifteenBoard.swift */; };
 		A9D1CEEA2379569A00F5D51D /* GameLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1CEE92379569A00F5D51D /* GameLevel.swift */; };
@@ -209,6 +211,8 @@
 		A9CA51D6237C3EEA00C29805 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A9CA51D7237C3EEA00C29805 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		A9CA51DA237C450700C29805 /* AppMusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMusicPlayer.swift; sourceTree = "<group>"; };
+		A9CA51DD237D388700C29805 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		A9CA51DE237D388700C29805 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		A9D1CEE22379486800F5D51D /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		A9D1CEE32379486800F5D51D /* FifteenBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifteenBoard.swift; sourceTree = "<group>"; };
 		A9D1CEE92379569A00F5D51D /* GameLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevel.swift; sourceTree = "<group>"; };
@@ -292,6 +296,7 @@
 		A9138DA8233B70DF009400A3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A9CA51DC237D387500C29805 /* ResultPage */,
 				A9CA51D1237C3E7400C29805 /* SettingPage */,
 				A9D1CEEC237A7D1A00F5D51D /* GameLevel */,
 				A9AE7466237944230087057E /* GamePage */,
@@ -556,6 +561,15 @@
 			path = SettingPage;
 			sourceTree = "<group>";
 		};
+		A9CA51DC237D387500C29805 /* ResultPage */ = {
+			isa = PBXGroup;
+			children = (
+				A9CA51DD237D388700C29805 /* ResultViewController.swift */,
+				A9CA51DE237D388700C29805 /* ResultViewController.xib */,
+			);
+			path = ResultPage;
+			sourceTree = "<group>";
+		};
 		A9D1CEEB2379806000F5D51D /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -639,13 +653,14 @@
 				A9AE7453237826680087057E /* GameSelectViewController.storyboard in Resources */,
 				0433FDA8230CE84B00AC613A /* Assets.xcassets in Resources */,
 				A90E4357233CA015006867E4 /* LaunchViewController.xib in Resources */,
+				A9CA51E2237D471B00C29805 /* FZZJ-TTMBFONT.ttf in Resources */,
 				A93FE3E4237AEE2800264C49 /* Scrape.wav in Resources */,
 				A9AE745F237847000087057E /* PuzzleImageCollectionViewCell.xib in Resources */,
-				A9AE745623782AF90087057E /* FZZJ-TTMBFONT.ttf in Resources */,
 				A9D1CEF0237A7D3100F5D51D /* GameLevelViewController.xib in Resources */,
 				A93FE3E2237AEE2800264C49 /* Mining by Moonlight.mp3 in Resources */,
 				A93FE3E0237AEE2800264C49 /* Drip.wav in Resources */,
 				A93FE3E5237AEE2800264C49 /* Chomp.wav in Resources */,
+				A9CA51E0237D388700C29805 /* ResultViewController.xib in Resources */,
 				A93FE3E3237AEE2800264C49 /* Error.wav in Resources */,
 				A93FE3E1237AEE2800264C49 /* Ka-Ching.wav in Resources */,
 				A9138E4E233B735B009400A3 /* WebViewController.storyboard in Resources */,
@@ -739,6 +754,7 @@
 				A9138E28233B72E5009400A3 /* UIView+Additions.swift in Sources */,
 				A9138E34233B72E5009400A3 /* UIScreen+Additions.swift in Sources */,
 				A9138E40233B72EC009400A3 /* Date+Additions.swift in Sources */,
+				A9CA51DF237D388700C29805 /* ResultViewController.swift in Sources */,
 				A9138E23233B72DC009400A3 /* StoryboardInitializable.swift in Sources */,
 				A9AE745B23783AD80087057E /* Puzzle.swift in Sources */,
 				A90E435E233CA85F006867E4 /* Moya+ObjectMapper.swift in Sources */,

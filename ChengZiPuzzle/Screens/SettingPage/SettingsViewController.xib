@@ -29,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tH-DD-5Ha">
-                    <rect key="frame" x="0.0" y="111.5" width="320" height="365"/>
+                    <rect key="frame" x="0.0" y="1111.5" width="320" height="365"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting" translatesAutoresizingMaskIntoConstraints="NO" id="2ls-yn-8n5">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="365"/>
@@ -126,7 +126,7 @@
                 <constraint firstItem="2tH-DD-5Ha" firstAttribute="width" secondItem="2tH-DD-5Ha" secondAttribute="height" multiplier="340:388" id="3Nm-dJ-Wx2"/>
                 <constraint firstItem="2tH-DD-5Ha" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="lZx-ev-2h0"/>
                 <constraint firstItem="2tH-DD-5Ha" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sB2-WU-Ul7"/>
-                <constraint firstItem="2tH-DD-5Ha" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="saR-eB-Fis"/>
+                <constraint firstItem="2tH-DD-5Ha" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="1000" id="saR-eB-Fis"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

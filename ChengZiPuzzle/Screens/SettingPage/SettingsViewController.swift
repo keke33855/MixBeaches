@@ -28,24 +28,26 @@ class SettingsViewController: BaseViewController {
         gameMusicCheckBtn.adjustsImageWhenHighlighted = false
         gameSoundCheckBtn.adjustsImageWhenHighlighted = false
         
-        let gameMusicImage = UserDefaults.FlagManager.bool(forKey: .isBackgroundSoundOn) ? #imageLiteral(resourceName: "checked") : #imageLiteral(resourceName: "unchecked")
+        let gameMusicImage = UserDefaults.FlagManager.bool(forKey: .isBackgroundSoundOff) ? #imageLiteral(resourceName: "unchecked") : #imageLiteral(resourceName: "checked")
         gameMusicCheckBtn.setBackgroundImage(gameMusicImage, for: .normal)
         
-        let gameSoundImage = UserDefaults.FlagManager.bool(forKey: .isPlaySoundOn) ? #imageLiteral(resourceName: "checked") : #imageLiteral(resourceName: "unchecked")
+        let gameSoundImage = UserDefaults.FlagManager.bool(forKey: .isPlaySoundOff) ? #imageLiteral(resourceName: "unchecked") : #imageLiteral(resourceName: "checked")
         gameSoundCheckBtn.setBackgroundImage(gameSoundImage, for: .normal)
         
         gameMusicCheckBtn.rx.tap
             .subscribe({ [weak self] _ in
-                UserDefaults.FlagManager.BoolDefaultKey.isBackgroundSoundOn.toggle()
-                let gameMusicImage = UserDefaults.FlagManager.bool(forKey: .isBackgroundSoundOn) ? #imageLiteral(resourceName: "checked") : #imageLiteral(resourceName: "unchecked")
+                UserDefaults.FlagManager.BoolDefaultKey.isBackgroundSoundOff.toggle()
+                let isBackgroundMusicOff = UserDefaults.FlagManager.bool(forKey: .isBackgroundSoundOff)
+                let gameMusicImage = !isBackgroundMusicOff ? #imageLiteral(resourceName: "checked") : #imageLiteral(resourceName: "unchecked")
                 self?.gameMusicCheckBtn.setBackgroundImage(gameMusicImage, for: .normal)
+                !isBackgroundMusicOff ? AppMusicPlayer.shared.play(force: true) : AppMusicPlayer.shared.stop()
             })
             .disposed(by: disposeBag)
         
         gameSoundCheckBtn.rx.tap
             .subscribe({ [weak self] _ in
-                UserDefaults.FlagManager.BoolDefaultKey.isPlaySoundOn.toggle()
-                let gameSoundImage = UserDefaults.FlagManager.bool(forKey: .isPlaySoundOn) ? #imageLiteral(resourceName: "checked") : #imageLiteral(resourceName: "unchecked")
+                UserDefaults.FlagManager.BoolDefaultKey.isPlaySoundOff.toggle()
+                let gameSoundImage = !UserDefaults.FlagManager.bool(forKey: .isPlaySoundOff) ? #imageLiteral(resourceName: "checked") : #imageLiteral(resourceName: "unchecked")
                 self?.gameSoundCheckBtn.setBackgroundImage(gameSoundImage, for: .normal)
             })
             .disposed(by: disposeBag)
@@ -59,7 +61,7 @@ class SettingsViewController: BaseViewController {
                        delay: 0,
                        options: [.curveEaseInOut],
                        animations: { [weak self] in
-                        self?.view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+                        self?.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
                         self?.view.layoutIfNeeded()
             },
                        completion: nil)

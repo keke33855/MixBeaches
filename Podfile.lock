@@ -7,6 +7,7 @@ PODS:
   - JPush (3.1.0):
     - JCore (~> 1.2.0)
   - Kingfisher (5.6.0)
+  - lottie-ios (3.1.2)
   - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.1)
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - IQKeyboardManager
   - JPush (= 3.1.0)
   - Kingfisher (= 5.6.0)
+  - lottie-ios
   - Moya/RxSwift (= 13.0.1)
   - ObjectMapper (= 3.4.2)
   - ReactorKit (= 1.2.1)
@@ -59,6 +61,7 @@ SPEC REPOS:
     - JCore
     - JPush
     - Kingfisher
+    - lottie-ios
     - Moya
     - ObjectMapper
     - ReactorKit
@@ -80,6 +83,7 @@ SPEC CHECKSUMS:
   JCore: cae516dd2bf1a73b578ce6e1065abd49e709e0f7
   JPush: 5921e25ad13e0386351079217b009f2039084eac
   Kingfisher: 1a50df6880a60bae26f3e21a0df3d17b892f5e0b
+  lottie-ios: 49cd85b1f24f61a7708ad7ec76a523ab2d0e3100
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   ReactorKit: 8be57f0527ad1ac2963cd5c338274a46a01e57a3
@@ -93,6 +97,6 @@ SPEC CHECKSUMS:
   WSProgressHUD: a0902809c8af112fb34b004fdc75c16eb85167a3
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
 
-PODFILE CHECKSUM: 0373c4bf050a696685a4818dfd04e68252d466ad
+PODFILE CHECKSUM: 8edfe587d68d4909be2161e7e9c1e0a9495fcdf4
 
 COCOAPODS: 1.7.5

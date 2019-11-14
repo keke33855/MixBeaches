@@ -28,8 +28,8 @@ extension UserDefaults {
         private init() {}
 
         enum BoolDefaultKey: String {
-            case isBackgroundSoundOn
-            case isPlaySoundOn
+            case isBackgroundSoundOff
+            case isPlaySoundOff
             
             func toggle() {
                 var boolValue = UserDefaults.FlagManager.bool(forKey: self)
@@ -44,7 +44,7 @@ extension UserDefaults {
         private init() {}
 
         enum StringDefaultKey: String {
-            case expires
+            case bestScore
         }
     }
 }

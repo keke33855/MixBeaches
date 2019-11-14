@@ -79,11 +79,21 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvq-th-eRj" userLabel="back">
+                                <rect key="frame" x="352" y="52" width="54" height="53"/>
+                                <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                <state key="normal" image="settingsBtn"/>
+                                <connections>
+                                    <action selector="settingTapped:" destination="Yjv-dG-Lxg" eventType="touchUpInside" id="rgx-jE-kYP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Wvq-th-eRj" firstAttribute="top" secondItem="2Lo-nP-Ipn" secondAttribute="top" constant="8" id="1T0-me-1ev"/>
                             <constraint firstItem="2Lo-nP-Ipn" firstAttribute="trailing" secondItem="1Vb-hh-Xm1" secondAttribute="trailing" constant="44" id="3G9-0Z-bTm"/>
                             <constraint firstItem="2Lo-nP-Ipn" firstAttribute="trailing" secondItem="eHp-9z-Usy" secondAttribute="trailing" id="8mS-DN-ahy"/>
+                            <constraint firstItem="2Lo-nP-Ipn" firstAttribute="trailing" secondItem="Wvq-th-eRj" secondAttribute="trailing" constant="8" id="BYd-Jf-siT"/>
                             <constraint firstItem="1Vb-hh-Xm1" firstAttribute="leading" secondItem="2Lo-nP-Ipn" secondAttribute="leading" constant="44" id="Egr-Ww-L2b"/>
                             <constraint firstItem="pG9-6I-YaM" firstAttribute="top" secondItem="2Ti-du-tHN" secondAttribute="bottom" constant="16" id="G2T-J0-Z3q"/>
                             <constraint firstItem="QWF-mX-wQK" firstAttribute="top" secondItem="1Vb-hh-Xm1" secondAttribute="bottom" constant="44" id="Ohy-eM-X2Q"/>
@@ -119,5 +129,6 @@
         <image name="backBtn" width="54" height="53"/>
         <image name="closeEyes" width="56" height="38"/>
         <image name="gamePageBg" width="414" height="912"/>
+        <image name="settingsBtn" width="54" height="53"/>
     </resources>
 </document>

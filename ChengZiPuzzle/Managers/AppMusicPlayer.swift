@@ -19,8 +19,8 @@ class AppMusicPlayer {
     }()
 
     
-    func playIfCan() {
-        if UserDefaults.FlagManager.bool(forKey: .isBackgroundSoundOn) {
+    func play(force: Bool) {
+        if force || !UserDefaults.FlagManager.bool(forKey: .isBackgroundSoundOff) {
             appBgPlayer?.play()
         }
     }

@@ -30,6 +30,9 @@ target 'ChengZiPuzzle' do
   pod 'Then'
   pod 'CountdownLabel'
   
+  # UI
+  pod 'lottie-ios'
+  
   # Push
   pod 'JPush', '3.1.0'
 
