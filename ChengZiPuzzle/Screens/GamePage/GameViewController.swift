@@ -224,7 +224,7 @@ class GameViewController: BaseViewController {
                 case .replay:
                     self?.replayGame()
                 case .returnHome:
-                    self?.navigationController?.popToRootViewController(animated: true)
+                    self?.navigationController?.popViewController(animated: true)
                 }
             }
         }
