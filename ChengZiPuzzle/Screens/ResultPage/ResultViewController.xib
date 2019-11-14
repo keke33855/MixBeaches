@@ -22,6 +22,7 @@
                 <outlet property="closeBtn" destination="iOQ-RV-qmc" id="ng4-KL-Zpu"/>
                 <outlet property="currentScoreLbl" destination="vge-Mm-bCw" id="iXv-by-tn5"/>
                 <outlet property="replayBtn" destination="JJo-1a-RtV" id="Cj1-yp-GHi"/>
+                <outlet property="titleLbl" destination="D4U-UU-y9n" id="DaP-8l-xxx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,13 +32,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvJ-Rg-P1L">
-                    <rect key="frame" x="64" y="1172.6666666666667" width="286" height="560.66666666666674"/>
+                    <rect key="frame" x="24" y="1094.3333333333333" width="366" height="717.33333333333326"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RankBg" translatesAutoresizingMaskIntoConstraints="NO" id="utV-dO-ohh">
-                            <rect key="frame" x="0.0" y="0.0" width="286" height="560.66666666666663"/>
+                            <rect key="frame" x="0.0" y="0.0" width="366" height="717.33333333333337"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOQ-RV-qmc">
-                            <rect key="frame" x="234" y="8" width="44" height="44"/>
+                            <rect key="frame" x="314" y="8" width="44" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="FjO-1K-g8I"/>
                                 <constraint firstAttribute="width" constant="44" id="pt0-wu-2FB"/>
@@ -45,34 +46,34 @@
                             <state key="normal" image="closeBtn"/>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ei6-35-z1o">
-                            <rect key="frame" x="16" y="143.00000000000003" width="254" height="274.66666666666674"/>
+                            <rect key="frame" x="16" y="207.66666666666674" width="334" height="302"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CurrentScore:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cl-y3-eOo">
-                                    <rect key="frame" x="0.0" y="0.0" width="254" height="35"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="334" height="35"/>
                                     <fontDescription key="fontDescription" name="FZZJ-TTMBFONT" family="FZZJ-TTMBFONT" pointSize="30"/>
                                     <color key="textColor" red="0.27058823529999998" green="0.20000000000000001" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:01:25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vge-Mm-bCw">
-                                    <rect key="frame" x="0.0" y="47" width="254" height="35"/>
+                                    <rect key="frame" x="0.0" y="47" width="334" height="35"/>
                                     <fontDescription key="fontDescription" name="FZZJ-TTMBFONT" family="FZZJ-TTMBFONT" pointSize="30"/>
                                     <color key="textColor" red="0.27058823529999998" green="0.20000000000000001" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BestScore:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nte-st-HXp">
-                                    <rect key="frame" x="0.0" y="94" width="254" height="35"/>
+                                    <rect key="frame" x="0.0" y="94" width="334" height="35"/>
                                     <fontDescription key="fontDescription" name="FZZJ-TTMBFONT" family="FZZJ-TTMBFONT" pointSize="30"/>
                                     <color key="textColor" red="0.27058823529999998" green="0.20000000000000001" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:4:06" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1x-GU-Kga">
-                                    <rect key="frame" x="0.0" y="141" width="254" height="35"/>
+                                    <rect key="frame" x="0.0" y="141" width="334" height="35"/>
                                     <fontDescription key="fontDescription" name="FZZJ-TTMBFONT" family="FZZJ-TTMBFONT" pointSize="30"/>
                                     <color key="textColor" red="0.27058823529999998" green="0.20000000000000001" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJo-1a-RtV">
-                                    <rect key="frame" x="0.0" y="188" width="254" height="86.666666666666686"/>
+                                    <rect key="frame" x="0.0" y="188" width="334" height="114"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="JJo-1a-RtV" secondAttribute="height" multiplier="196:67" id="e8U-V3-kmH"/>
                                     </constraints>
@@ -84,7 +85,7 @@
                             </subviews>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YouWin!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4U-UU-y9n">
-                            <rect key="frame" x="39.333333333333329" y="64" width="207.66666666666669" height="57"/>
+                            <rect key="frame" x="79.333333333333329" y="64" width="207.66666666666669" height="57"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="57" id="cju-ZG-7tM"/>
                             </constraints>
@@ -114,7 +115,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="UvJ-Rg-P1L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="64" id="DOa-RU-Ngr"/>
+                <constraint firstItem="UvJ-Rg-P1L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="DOa-RU-Ngr"/>
                 <constraint firstItem="UvJ-Rg-P1L" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Zip-r1-Af0"/>
                 <constraint firstItem="UvJ-Rg-P1L" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="1000" id="u3t-VR-7VW"/>
             </constraints>

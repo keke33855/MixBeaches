@@ -13,6 +13,15 @@ import AVKit
 enum GameResult {
     case win(String)
     case fail
+    
+    var title: String {
+        switch self {
+        case .fail:
+            return "YouLose!"
+        default:
+            return "YouWin!"
+        }
+    }
 }
 
 class GameViewController: BaseViewController {
@@ -40,7 +49,8 @@ class GameViewController: BaseViewController {
             countDownLbl.animationType = .Evaporate
             countDownLbl.textAlignment = .center
             countDownLbl.textColor = .white
-            countDownLbl.font = UIFont(name:"FZZJ-TTMBFONT", size:80)
+            let fontSize: CGFloat = UIScreen.width == 320 ? 40 : 60
+            countDownLbl.font = UIFont(name:"FZZJ-TTMBFONT", size:fontSize)
         }
     }
     
@@ -107,7 +117,7 @@ class GameViewController: BaseViewController {
             showOriginImage = true
             return
         }
-        
+        self.view.layoutIfNeeded()
         let playView = BoardView(frame: playRootView.bounds, numOfRows: numOfRow)
         self.playView = playView
         playRootView.addSubview(playView)
@@ -198,20 +208,24 @@ class GameViewController: BaseViewController {
     }
     
     private func replayGame() {
+        showOriginImage = false
+        
         playView?.switchTileOrder(true)
         playView?.layoutSubviews()
-        
+        countDownLbl.textColor = .white
         countDownLbl.addTime(time: gameLevel?.countDownTime ?? 0)
         countDownLbl.start()
     }
     
     private func navigateToResultScreen(gameResult: GameResult) {
-        ResultViewController.show(gameResult: gameResult) { [weak self] (type) in
-            switch type {
-            case .replay:
-                self?.replayGame()
-            case .returnHome:
-                self?.navigationController?.popToRootViewController(animated: true)
+        GCD.after(sec: 1) {
+            ResultViewController.show(gameResult: gameResult) { [weak self] (type) in
+                switch type {
+                case .replay:
+                    self?.replayGame()
+                case .returnHome:
+                    self?.navigationController?.popToRootViewController(animated: true)
+                }
             }
         }
     }

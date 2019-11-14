@@ -88,6 +88,10 @@ class SettingsViewController: BaseViewController {
                         self?.dismiss(animated: false, completion: nil)
         })
     }
+    
+    @IBAction func rateUsTapped(_ sender: Any) {
+        (UIApplication.shared.delegate as? AppDelegate)?.appManager.showAppInStore()
+    }
 }
 
 extension SettingsViewController {

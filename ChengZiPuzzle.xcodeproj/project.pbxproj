@@ -937,9 +937,9 @@
 			baseConfigurationReference = 19948EE56C3220CD4B77349F /* Pods-ChengZiPuzzle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 3W4H92M776;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z65L55WL5M;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ChengZiPuzzle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -949,7 +949,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.ChengZiPuzzle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = distribution_profile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/ChengZiPuzzle/ChengZiBridgeHeader.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -961,10 +961,10 @@
 			baseConfigurationReference = 2F8DA92F52F8D72DAADDF645 /* Pods-ChengZiPuzzle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 3W4H92M776;
+				DEVELOPMENT_TEAM = Z65L55WL5M;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ChengZiPuzzle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -974,7 +974,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.ChengZiPuzzle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = distribution_profile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/ChengZiPuzzle/ChengZiBridgeHeader.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -19,6 +19,7 @@ class ResultViewController: BaseViewController {
     @IBOutlet private weak var bestScoreLbl: UILabel!
     @IBOutlet private weak var replayBtn: UIButton!
     @IBOutlet private weak var closeBtn: UIButton!
+    @IBOutlet private weak var titleLbl: UILabel!
     
     @IBOutlet weak var boardCenterYConstraint: NSLayoutConstraint!
     
@@ -29,6 +30,7 @@ class ResultViewController: BaseViewController {
     static func instance(gameResult: GameResult, completion: @escaping (ResultDismissType) -> Void) -> ResultViewController {
         let vc = ResultViewController()
         vc.gameResult = gameResult
+        vc.completion = completion
         return vc
     }
     
@@ -54,6 +56,7 @@ class ResultViewController: BaseViewController {
     }
     
     private func configScoreView() {
+        titleLbl.text = gameResult.title
         var bestScore = "NoRecord"
         if let score = UserDefaults.StringManager.string(forKey: .bestScore) {
             bestScore = score
@@ -103,8 +106,9 @@ class ResultViewController: BaseViewController {
                         self?.view.layoutIfNeeded()
             },
                        completion: { [weak self] _ in
+                        self?.completion?(type)
                         self?.dismiss(animated: true, completion: {
-                            self?.completion?(type)
+                            
                         })
         })
     }

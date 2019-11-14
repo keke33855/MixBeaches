@@ -99,6 +99,9 @@
                             <state key="normal" title="RateUs" backgroundImage="RateUsBtnBg">
                                 <color key="titleColor" red="0.27058823529411763" green="0.20000000000000001" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="rateUsTapped:" destination="-1" eventType="touchUpInside" id="yb6-HP-NPg"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,14 +20,14 @@
             <objects>
                 <viewController storyboardIdentifier="GamePhotoSelectViewController" id="Snh-5J-Ko2" customClass="GamePhotoSelectViewController" customModule="ChengZiPuzzle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Igz-sO-qEX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gamePageBg" translatesAutoresizingMaskIntoConstraints="NO" id="RLU-oN-J9T">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MzX-25-gUs">
-                                <rect key="frame" x="15.999999999999996" y="52" width="53.666666666666657" height="53"/>
+                                <rect key="frame" x="16" y="28" width="54" height="53"/>
                                 <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                                 <state key="normal" image="backBtn"/>
                                 <connections>
@@ -35,7 +35,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzg-jn-mys">
-                                <rect key="frame" x="344.33333333333331" y="52" width="53.666666666666686" height="53"/>
+                                <rect key="frame" x="250" y="28" width="54" height="53"/>
                                 <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                                 <state key="normal" image="cameraBtn"/>
                                 <connections>
@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="why-fj-3NZ">
-                                <rect key="frame" x="282.66666666666669" y="52" width="53.666666666666686" height="53"/>
+                                <rect key="frame" x="188" y="28" width="54" height="53"/>
                                 <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                                 <state key="normal" image="photoLibBtn"/>
                                 <connections>
@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Y4A-vi-PqU">
-                                <rect key="frame" x="0.0" y="194" width="414" height="668"/>
+                                <rect key="frame" x="0.0" y="138" width="320" height="430"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="osW-4Y-bzf">
                                     <size key="itemSize" width="169" height="163"/>
@@ -61,8 +61,8 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PuzzleGallary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDn-jH-cLm">
-                                <rect key="frame" x="15.999999999999986" y="129" width="244.66666666666663" height="57"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PuzzleGallary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDn-jH-cLm">
+                                <rect key="frame" x="16" y="81" width="288" height="57"/>
                                 <fontDescription key="fontDescription" name="FZZJ-TTMBFONT" family="FZZJ-TTMBFONT" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -78,12 +78,13 @@
                             <constraint firstItem="MzX-25-gUs" firstAttribute="leading" secondItem="ekF-mK-7mw" secondAttribute="leading" constant="16" id="FlC-IJ-fow"/>
                             <constraint firstItem="dDn-jH-cLm" firstAttribute="leading" secondItem="ekF-mK-7mw" secondAttribute="leading" constant="16" id="OES-3T-ecJ"/>
                             <constraint firstItem="RLU-oN-J9T" firstAttribute="leading" secondItem="Igz-sO-qEX" secondAttribute="leading" id="Puj-8A-PeA"/>
-                            <constraint firstItem="Y4A-vi-PqU" firstAttribute="top" secondItem="dDn-jH-cLm" secondAttribute="bottom" constant="8" id="QuF-kw-EuB"/>
+                            <constraint firstItem="Y4A-vi-PqU" firstAttribute="top" secondItem="dDn-jH-cLm" secondAttribute="bottom" id="QuF-kw-EuB"/>
                             <constraint firstItem="RLU-oN-J9T" firstAttribute="top" secondItem="Igz-sO-qEX" secondAttribute="top" id="T1a-Oh-rj6"/>
                             <constraint firstItem="why-fj-3NZ" firstAttribute="top" secondItem="ekF-mK-7mw" secondAttribute="top" constant="8" id="Txm-wb-etp"/>
                             <constraint firstAttribute="bottom" secondItem="RLU-oN-J9T" secondAttribute="bottom" id="ZUM-C5-1L6"/>
                             <constraint firstItem="uzg-jn-mys" firstAttribute="leading" secondItem="why-fj-3NZ" secondAttribute="trailing" constant="8" id="Zbm-Sl-3iI"/>
-                            <constraint firstItem="dDn-jH-cLm" firstAttribute="top" secondItem="MzX-25-gUs" secondAttribute="bottom" constant="24" id="kYf-vv-Qgd"/>
+                            <constraint firstItem="ekF-mK-7mw" firstAttribute="trailing" secondItem="dDn-jH-cLm" secondAttribute="trailing" constant="16" id="j5B-3m-aOK"/>
+                            <constraint firstItem="dDn-jH-cLm" firstAttribute="top" secondItem="MzX-25-gUs" secondAttribute="bottom" id="kYf-vv-Qgd"/>
                             <constraint firstItem="ekF-mK-7mw" firstAttribute="trailing" secondItem="Y4A-vi-PqU" secondAttribute="trailing" id="thY-yf-wSq"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Y4A-vi-PqU" secondAttribute="bottom" id="wbC-Q0-fvF"/>
                         </constraints>
@@ -100,9 +101,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backBtn" width="53.666667938232422" height="53"/>
-        <image name="cameraBtn" width="53.666667938232422" height="53"/>
+        <image name="backBtn" width="54" height="53"/>
+        <image name="cameraBtn" width="54" height="53"/>
         <image name="gamePageBg" width="414" height="912"/>
-        <image name="photoLibBtn" width="53.666667938232422" height="53"/>
+        <image name="photoLibBtn" width="54" height="53"/>
     </resources>
 </document>

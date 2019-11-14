@@ -10,6 +10,8 @@ import UIKit
 
 class GameSelectViewController: BaseViewController {
 
+    @IBOutlet private weak var bestScoreLbl: UILabel!
+    
     static func instance() -> GameSelectViewController {
         let vc = GameSelectViewController.initFromStoryboard()
         return vc
@@ -18,16 +20,19 @@ class GameSelectViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let bestScore = UserDefaults.StringManager.string(forKey: .bestScore) ?? "NoRecord"
+        bestScoreLbl.isHidden = bestScore == "NoRecord"
+        bestScoreLbl.text = "BestScores:" + bestScore
     }
 
     // MARK: - Actions
     @IBAction func backTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func highScoresTapped(_ sender: Any) {
-        
     }
     
     @IBAction func puzzleGalleryTapped(_ sender: Any) {

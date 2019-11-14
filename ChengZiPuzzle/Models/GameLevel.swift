@@ -42,7 +42,7 @@ enum GameLevel: Int {
     var countDownTime: TimeInterval {
         switch self {
         case .level1:
-            return 5 //5 * 60
+            return 5 * 60
         case .level2:
             return 7 * 60
         case .level3:
