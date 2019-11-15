@@ -15,7 +15,9 @@ class AppMusicPlayer {
     private init() {}
     
     let appBgPlayer: AVAudioPlayer? = {
-        return GameViewController.createAudioPlayer(name: "Mining by Moonlight", type: "mp3")
+        let player = GameViewController.createAudioPlayer(name: "Mining by Moonlight", type: "mp3")
+        player?.numberOfLoops = -1
+        return player
     }()
 
     

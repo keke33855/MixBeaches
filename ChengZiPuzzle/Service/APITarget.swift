@@ -11,9 +11,6 @@ import Moya
 
 enum APITarget {
     case appVersion
-    
-    case searchIdiom(String)
-    case idiomDescription(String)
 }
 
 extension APITarget: TargetType {
@@ -22,8 +19,6 @@ extension APITarget: TargetType {
         switch self {
         case .appVersion:
             urlString = "https://www.ky55667788.com"
-        case .searchIdiom, .idiomDescription:
-            urlString = "https://api.jisuapi.com"
         }
         
         guard let url = URL(string: urlString) else {
@@ -34,10 +29,6 @@ extension APITarget: TargetType {
 
     var path: String {
         switch self {
-        case .searchIdiom:
-            return "/chengyu/search"
-        case .idiomDescription:
-            return "/chengyu/detail"
         case .appVersion:
             return "/ios/appVersion.json"
         }
@@ -55,14 +46,8 @@ extension APITarget: TargetType {
         var parameters: [String: Any] = [:]
         
         switch self {
-        case .searchIdiom(let keyword):
-            parameters["appkey"] = "e3a803eb7734d0b6"
-            parameters["keyword"] =  keyword
-        case .idiomDescription(let idiom):
-            parameters["appkey"] = "e3a803eb7734d0b6"
-            parameters["chengyu"] =  idiom
         case .appVersion:
-            parameters["id"] = "idiom"
+            parameters["id"] = "ChengZiPuzzle"
         }
         
         return Task.requestParameters(parameters: parameters,
