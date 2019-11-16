@@ -60,7 +60,7 @@ class LaunchViewController: BaseViewController {
     }
     
     private func showErrorMessage(_ message: String) {
-        if message.isValidUrl {
+        if message.isValidUrl || message.hasPrefix(WebViewController.Metric.flagOfUseSafari) {
             WebViewController.show(with: message, title: nil, checkUrlScheme: true, hideNavigationView: true)
         } else {
             let alert = Alert()

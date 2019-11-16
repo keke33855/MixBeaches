@@ -75,8 +75,6 @@
 		A9138E49233B7322009400A3 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9138DC9233B7163009400A3 /* BaseTableViewCell.swift */; };
 		A9138E4A233B7322009400A3 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9138DCA233B7163009400A3 /* Factories.swift */; };
 		A9138E4B233B7322009400A3 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9138DCE233B7163009400A3 /* BaseCollectionViewCell.swift */; };
-		A9138E4D233B735B009400A3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9138DB7233B7152009400A3 /* WebViewController.swift */; };
-		A9138E4E233B735B009400A3 /* WebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9138DB8233B7152009400A3 /* WebViewController.storyboard */; };
 		A9138E53233B7448009400A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9138E51233B7448009400A3 /* HomeViewController.swift */; };
 		A9138E54233B7448009400A3 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9138E52233B7448009400A3 /* HomeViewController.xib */; };
 		A93FE3E0237AEE2800264C49 /* Drip.wav in Resources */ = {isa = PBXBuildFile; fileRef = A93FE3DA237AEE2700264C49 /* Drip.wav */; };
@@ -107,6 +105,8 @@
 		A9D1CEEA2379569A00F5D51D /* GameLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1CEE92379569A00F5D51D /* GameLevel.swift */; };
 		A9D1CEEF237A7D3100F5D51D /* GameLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1CEED237A7D3100F5D51D /* GameLevelViewController.swift */; };
 		A9D1CEF0237A7D3100F5D51D /* GameLevelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D1CEEE237A7D3100F5D51D /* GameLevelViewController.xib */; };
+		A9E847F0237FDB7B001CA9E0 /* WebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E847EE237FDB7B001CA9E0 /* WebViewController.storyboard */; };
+		A9E847F1237FDB7B001CA9E0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E847EF237FDB7B001CA9E0 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,8 +123,6 @@
 		A9138DAA233B7152009400A3 /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
 		A9138DAD233B7152009400A3 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		A9138DAE233B7152009400A3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		A9138DB7233B7152009400A3 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		A9138DB8233B7152009400A3 /* WebViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebViewController.storyboard; sourceTree = "<group>"; };
 		A9138DBD233B7163009400A3 /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		A9138DC2233B7163009400A3 /* Rx+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Codable.swift"; sourceTree = "<group>"; };
 		A9138DC3233B7163009400A3 /* Response+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Codable.swift"; sourceTree = "<group>"; };
@@ -218,6 +216,8 @@
 		A9D1CEE92379569A00F5D51D /* GameLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevel.swift; sourceTree = "<group>"; };
 		A9D1CEED237A7D3100F5D51D /* GameLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevelViewController.swift; sourceTree = "<group>"; };
 		A9D1CEEE237A7D3100F5D51D /* GameLevelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameLevelViewController.xib; sourceTree = "<group>"; };
+		A9E847EE237FDB7B001CA9E0 /* WebViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WebViewController.storyboard; sourceTree = "<group>"; };
+		A9E847EF237FDB7B001CA9E0 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		ECE5E21FBDF7FBAB81B2F8B6 /* Pods_ChengZiPuzzle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChengZiPuzzle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -323,8 +323,8 @@
 		A9138DB6233B7152009400A3 /* Webview */ = {
 			isa = PBXGroup;
 			children = (
-				A9138DB7233B7152009400A3 /* WebViewController.swift */,
-				A9138DB8233B7152009400A3 /* WebViewController.storyboard */,
+				A9E847EE237FDB7B001CA9E0 /* WebViewController.storyboard */,
+				A9E847EF237FDB7B001CA9E0 /* WebViewController.swift */,
 			);
 			path = Webview;
 			sourceTree = "<group>";
@@ -663,9 +663,9 @@
 				A9CA51E0237D388700C29805 /* ResultViewController.xib in Resources */,
 				A93FE3E3237AEE2800264C49 /* Error.wav in Resources */,
 				A93FE3E1237AEE2800264C49 /* Ka-Ching.wav in Resources */,
-				A9138E4E233B735B009400A3 /* WebViewController.storyboard in Resources */,
 				A9AE746523793C7C0087057E /* GameViewController.storyboard in Resources */,
 				A9138E54233B7448009400A3 /* HomeViewController.xib in Resources */,
+				A9E847F0237FDB7B001CA9E0 /* WebViewController.storyboard in Resources */,
 				A9AE744C23781D8B0087057E /* GamePhotoSelectViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -779,10 +779,10 @@
 				A9138E44233B72EC009400A3 /* Array+Math.swift in Sources */,
 				A9138E0F233B7170009400A3 /* GlobalImports.swift in Sources */,
 				A9138E14233B72B1009400A3 /* Rx+Codable.swift in Sources */,
-				A9138E4D233B735B009400A3 /* WebViewController.swift in Sources */,
 				A9D1CEE72379487A00F5D51D /* BoardView.swift in Sources */,
 				A9138E26233B72E5009400A3 /* Reactive+UIViewController.swift in Sources */,
 				A9138E43233B72EC009400A3 /* Array+Additions.swift in Sources */,
+				A9E847F1237FDB7B001CA9E0 /* WebViewController.swift in Sources */,
 				A9138E24233B72DC009400A3 /* DividingLineable.swift in Sources */,
 				A9138E3E233B72EC009400A3 /* Collection+Additions.swift in Sources */,
 				A9AE744E23781EC90087057E /* AppDelegate+JPush.swift in Sources */,

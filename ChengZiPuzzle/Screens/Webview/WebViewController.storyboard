@@ -13,7 +13,7 @@
         <!--Web View Controller-->
         <scene sceneID="NXq-th-g6f">
             <objects>
-                <viewController storyboardIdentifier="WebViewController" id="X2l-s2-RGq" customClass="WebViewController" customModule="IdiomBus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" id="X2l-s2-RGq" customClass="WebViewController" customModule="LovelyRabbit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9eH-dc-42T">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,19 +26,20 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yI4-Qr-zof">
-                                        <rect key="frame" x="2" y="0.0" width="44" height="44"/>
+                                        <rect key="frame" x="8" y="0.0" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="lHG-id-Xwn"/>
                                         </constraints>
-                                        <color key="tintColor" red="0.56862745100000001" green="0.26274509800000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" image="back"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                        </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="I6k-GB-0gg"/>
                                     <constraint firstAttribute="bottom" secondItem="yI4-Qr-zof" secondAttribute="bottom" id="bKa-Xd-Etc"/>
-                                    <constraint firstItem="yI4-Qr-zof" firstAttribute="leading" secondItem="A3x-8F-B4a" secondAttribute="leading" constant="2" id="eyN-vY-jq6"/>
+                                    <constraint firstItem="yI4-Qr-zof" firstAttribute="leading" secondItem="A3x-8F-B4a" secondAttribute="leading" constant="8" id="eyN-vY-jq6"/>
                                     <constraint firstItem="yI4-Qr-zof" firstAttribute="top" secondItem="A3x-8F-B4a" secondAttribute="top" id="x5Y-DK-Jl6"/>
                                 </constraints>
                             </view>
@@ -66,7 +67,4 @@
             <point key="canvasLocation" x="50.724637681159422" y="122.54464285714285"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="back" width="20" height="20"/>
-    </resources>
 </document>
