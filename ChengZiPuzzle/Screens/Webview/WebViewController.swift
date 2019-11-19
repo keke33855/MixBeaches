@@ -14,6 +14,10 @@ import RxCocoa
 class WebViewController: BaseViewController {
 
     @IBOutlet fileprivate weak var backBtn: UIButton!
+    @IBOutlet private weak var previousPageBtn: UIButton!
+    @IBOutlet private weak var nextPageBtn: UIButton!
+    @IBOutlet private weak var safariBtn: UIButton!
+    @IBOutlet private weak var homeBtn: UIButton!
     @IBOutlet private weak var webRootView: UIView!
     @IBOutlet private weak var navigationViewHeight: NSLayoutConstraint!
     
@@ -122,6 +126,58 @@ class WebViewController: BaseViewController {
                 self?.dismiss(animated: true, completion: nil)
             })
             .disposed(by: disposeBag)
+        
+        safariBtn.rx.tap
+            .asDriver()
+            .drive(onNext: { [weak self] in
+                guard let url = self?.webview.url else {
+                    return
+                }
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        previousPageBtn.rx.tap
+            .asDriver()
+            .drive(onNext: { [weak self] _ in
+                self?.webview.goBack()
+            })
+            .disposed(by: disposeBag)
+        
+        nextPageBtn.rx.tap
+            .asObservable()
+            .subscribe(onNext: { [weak self] _ in
+                self?.webview.goForward()
+            })
+            .disposed(by: disposeBag)
+        
+        homeBtn.rx.tap
+            .asObservable()
+            .subscribe(onNext: { [weak self] _ in
+                guard let url = URL(string: self?.initialUrl ?? "")?.addSchemeIfNeeded() else {
+                    return
+                }
+                let request = URLRequest(url: url)
+                self?.webview.load(request)
+            })
+            .disposed(by: disposeBag)
+        
+        // output
+        webview.rx.observe(Bool.self, "canGoBack")
+            .distinctUntilChanged()
+            .filterNil()
+            .bind(to: previousPageBtn.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        webview.rx.observe(Bool.self, "canGoForward")
+            .distinctUntilChanged()
+            .filterNil()
+            .bind(to: nextPageBtn.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
 
     // MARK: - life cycle
@@ -132,6 +188,13 @@ class WebViewController: BaseViewController {
         setupView()
     }
 
+    private func addCustomHeader(request: URLRequest) -> URLRequest {
+        var request = request
+        if let userAgent = customWebviewUserAgent() {
+            request.setValue(userAgent, forHTTPHeaderField: Metric.userAgentKey)
+        }
+        return request
+    }
 }
 
 extension WebViewController: WKNavigationDelegate {
@@ -158,7 +221,7 @@ extension WebViewController: WKNavigationDelegate {
             }
         }
         
-        if isMaybeUrlScheme || needOpenBySafari {
+        if isMaybeUrlScheme || needOpenBySafari || navigationAction.targetFrame == nil {
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             } else {
@@ -168,11 +231,23 @@ extension WebViewController: WKNavigationDelegate {
             
             return
         }
-
-        if (navigationAction.targetFrame == nil) {
-            webView.load(navigationAction.request)
+        
+        if !(navigationAction.request.value(forHTTPHeaderField: Metric.userAgentKey)?.contains(Metric.userAgentAppFlag) ?? false) {
+            let newRequest = addCustomHeader(request: navigationAction.request)
+            decisionHandler(.cancel)
+            webview.load(newRequest)
+            return
         }
+        
         decisionHandler(.allow)
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        print("navigation got error: \(error.localizedDescription)")
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        print("provisional got error: \(error.localizedDescription)")
     }
 }
 
@@ -181,5 +256,7 @@ extension WebViewController {
         private init() {}
         static let navigationHeight: CGFloat = 44.0
         static let flagOfUseSafari = "safari:"
+        static let userAgentAppFlag = "dafaApp"
+        static let userAgentKey = "navigator.userAgent"
     }
 }

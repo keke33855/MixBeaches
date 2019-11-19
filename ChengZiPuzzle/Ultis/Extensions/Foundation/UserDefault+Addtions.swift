@@ -47,4 +47,12 @@ extension UserDefaults {
             case bestScore
         }
     }
+    
+    struct Authorized: StringUserDefaultable {
+        private init() {}
+        enum StringDefaultKey: String {
+            case userAgent
+            case webviewUserAgent
+        }
+    }
 }

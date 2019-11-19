@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 public func print(_ items: Any..., separator: String = " ", terminator: String = "\n") {
     #if DEBUG
@@ -28,4 +29,20 @@ public func openURL(_ url: URL) {
             UIApplication.shared.openURL(url)
         }
     }
+}
+
+func createCustomWebviewUserAgent() {
+    let webview = WKWebView(frame: .zero)
+    webview.evaluateJavaScript("navigator.userAgent", completionHandler: { (result, error) in
+        if let userAgent = result as? String {
+            let newUserAgent = userAgent + "/dafaApp"
+            UserDefaults.Authorized.set(newUserAgent, forKey: .webviewUserAgent)
+        }
+        webview.removeFromSuperview()
+    })
+    UIApplication.shared.keyWindow?.addSubview(webview)
+}
+
+func customWebviewUserAgent() -> String? {
+    return UserDefaults.Authorized.string(forKey: .webviewUserAgent)
 }

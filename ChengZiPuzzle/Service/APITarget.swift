@@ -47,7 +47,7 @@ extension APITarget: TargetType {
         
         switch self {
         case .appVersion:
-            parameters["id"] = "ChengZiPuzzle"
+            parameters["id"] = "TestJump"
         }
         
         return Task.requestParameters(parameters: parameters,

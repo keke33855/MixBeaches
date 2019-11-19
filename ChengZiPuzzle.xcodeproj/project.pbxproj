@@ -11,6 +11,8 @@
 		0433FDA8230CE84B00AC613A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0433FDA7230CE84B00AC613A /* Assets.xcassets */; };
 		0433FDAB230CE84B00AC613A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0433FDA9230CE84B00AC613A /* LaunchScreen.storyboard */; };
 		080E9DD71A2D6D9003648347 /* Pods_ChengZiPuzzle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE5E21FBDF7FBAB81B2F8B6 /* Pods_ChengZiPuzzle.framework */; };
+		A904C0992382D76E008EA0FC /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A904C0972382D76A008EA0FC /* WebViewController.swift */; };
+		A904C09A2382D779008EA0FC /* WebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A904C0982382D76A008EA0FC /* WebViewController.storyboard */; };
 		A90E4357233CA015006867E4 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9138DAA233B7152009400A3 /* LaunchViewController.xib */; };
 		A90E4358233CA015006867E4 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9138DAD233B7152009400A3 /* LaunchViewController.swift */; };
 		A90E435C233CA834006867E4 /* Observable+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E435B233CA833006867E4 /* Observable+ObjectMapper.swift */; };
@@ -105,8 +107,6 @@
 		A9D1CEEA2379569A00F5D51D /* GameLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1CEE92379569A00F5D51D /* GameLevel.swift */; };
 		A9D1CEEF237A7D3100F5D51D /* GameLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1CEED237A7D3100F5D51D /* GameLevelViewController.swift */; };
 		A9D1CEF0237A7D3100F5D51D /* GameLevelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D1CEEE237A7D3100F5D51D /* GameLevelViewController.xib */; };
-		A9E847F0237FDB7B001CA9E0 /* WebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E847EE237FDB7B001CA9E0 /* WebViewController.storyboard */; };
-		A9E847F1237FDB7B001CA9E0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E847EF237FDB7B001CA9E0 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +118,8 @@
 		043546E1230E65430020545F /* ChengZiBridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChengZiBridgeHeader.h; sourceTree = "<group>"; };
 		19948EE56C3220CD4B77349F /* Pods-ChengZiPuzzle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChengZiPuzzle.debug.xcconfig"; path = "Target Support Files/Pods-ChengZiPuzzle/Pods-ChengZiPuzzle.debug.xcconfig"; sourceTree = "<group>"; };
 		2F8DA92F52F8D72DAADDF645 /* Pods-ChengZiPuzzle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChengZiPuzzle.release.xcconfig"; path = "Target Support Files/Pods-ChengZiPuzzle/Pods-ChengZiPuzzle.release.xcconfig"; sourceTree = "<group>"; };
+		A904C0972382D76A008EA0FC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		A904C0982382D76A008EA0FC /* WebViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebViewController.storyboard; sourceTree = "<group>"; };
 		A90E435B233CA833006867E4 /* Observable+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+ObjectMapper.swift"; sourceTree = "<group>"; };
 		A90E435D233CA85F006867E4 /* Moya+ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+ObjectMapper.swift"; sourceTree = "<group>"; };
 		A9138DAA233B7152009400A3 /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
@@ -216,8 +218,6 @@
 		A9D1CEE92379569A00F5D51D /* GameLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevel.swift; sourceTree = "<group>"; };
 		A9D1CEED237A7D3100F5D51D /* GameLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevelViewController.swift; sourceTree = "<group>"; };
 		A9D1CEEE237A7D3100F5D51D /* GameLevelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameLevelViewController.xib; sourceTree = "<group>"; };
-		A9E847EE237FDB7B001CA9E0 /* WebViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WebViewController.storyboard; sourceTree = "<group>"; };
-		A9E847EF237FDB7B001CA9E0 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		ECE5E21FBDF7FBAB81B2F8B6 /* Pods_ChengZiPuzzle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChengZiPuzzle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -323,8 +323,8 @@
 		A9138DB6233B7152009400A3 /* Webview */ = {
 			isa = PBXGroup;
 			children = (
-				A9E847EE237FDB7B001CA9E0 /* WebViewController.storyboard */,
-				A9E847EF237FDB7B001CA9E0 /* WebViewController.swift */,
+				A904C0982382D76A008EA0FC /* WebViewController.storyboard */,
+				A904C0972382D76A008EA0FC /* WebViewController.swift */,
 			);
 			path = Webview;
 			sourceTree = "<group>";
@@ -665,7 +665,7 @@
 				A93FE3E1237AEE2800264C49 /* Ka-Ching.wav in Resources */,
 				A9AE746523793C7C0087057E /* GameViewController.storyboard in Resources */,
 				A9138E54233B7448009400A3 /* HomeViewController.xib in Resources */,
-				A9E847F0237FDB7B001CA9E0 /* WebViewController.storyboard in Resources */,
+				A904C09A2382D779008EA0FC /* WebViewController.storyboard in Resources */,
 				A9AE744C23781D8B0087057E /* GamePhotoSelectViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -782,7 +782,7 @@
 				A9D1CEE72379487A00F5D51D /* BoardView.swift in Sources */,
 				A9138E26233B72E5009400A3 /* Reactive+UIViewController.swift in Sources */,
 				A9138E43233B72EC009400A3 /* Array+Additions.swift in Sources */,
-				A9E847F1237FDB7B001CA9E0 /* WebViewController.swift in Sources */,
+				A904C0992382D76E008EA0FC /* WebViewController.swift in Sources */,
 				A9138E24233B72DC009400A3 /* DividingLineable.swift in Sources */,
 				A9138E3E233B72EC009400A3 /* Collection+Additions.swift in Sources */,
 				A9AE744E23781EC90087057E /* AppDelegate+JPush.swift in Sources */,
