@@ -83,6 +83,7 @@ class WebViewController: BaseViewController {
                                                checkUrlScheme: checkUrlScheme,
                                                hideNavigationView: hideNavigationView)
         print("Debug: 2222")
+        webVC.modalPresentationStyle = .fullScreen
         UIApplication.topViewController?.present(webVC, animated: true, completion: nil)
     }
 
