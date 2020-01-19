@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="FZZJ-TTMBFONT.ttf">
+            <string>FZZJ-TTMBFONT</string>
+        </array>
+        <array key="PLAYPULL_Demo.ttf">
+            <string>PLAYPULL</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultViewController" customModule="MixBreaches" customModuleProvider="target">
+            <connections>
+                <outlet property="bestScoreLbl" destination="C1x-GU-Kga" id="xvf-uN-obS"/>
+                <outlet property="boardCenterYConstraint" destination="u3t-VR-7VW" id="nVf-uS-hAq"/>
+                <outlet property="closeBtn" destination="iOQ-RV-qmc" id="ng4-KL-Zpu"/>
+                <outlet property="currentScoreLbl" destination="vge-Mm-bCw" id="iXv-by-tn5"/>
+                <outlet property="replayBtn" destination="JJo-1a-RtV" id="Cj1-yp-GHi"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvJ-Rg-P1L">
+                    <rect key="frame" x="24" y="58" width="369" height="472"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alertbggameover" translatesAutoresizingMaskIntoConstraints="NO" id="utV-dO-ohh">
+                            <rect key="frame" x="30" y="-28" width="309" height="467"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJo-1a-RtV">
+                            <rect key="frame" x="50" y="402" width="269" height="70"/>
+                            <fontDescription key="fontDescription" name="FZZJ-TTMBFONT" family="FZZJ-TTMBFONT" pointSize="55"/>
+                            <state key="normal" backgroundImage="rankConfirmBg">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOQ-RV-qmc">
+                            <rect key="frame" x="295" y="22" width="66" height="66"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="66" id="FjO-1K-g8I"/>
+                                <constraint firstAttribute="width" constant="66" id="pt0-wu-2FB"/>
+                            </constraints>
+                            <state key="normal" image="closeBtn"/>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ei6-35-z1o">
+                            <rect key="frame" x="50" y="137.5" width="269" height="176"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CurrentScore:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGg-lg-9mu">
+                                    <rect key="frame" x="0.0" y="0.0" width="269" height="45"/>
+                                    <fontDescription key="fontDescription" name="PLAYPULL" family="PLAYPULL" pointSize="43"/>
+                                    <color key="textColor" red="0.049673996870000001" green="0.4392491281" blue="0.67323160169999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:01:25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vge-Mm-bCw">
+                                    <rect key="frame" x="0.0" y="50" width="269" height="36.5"/>
+                                    <fontDescription key="fontDescription" name="PLAYPULL" family="PLAYPULL" pointSize="35"/>
+                                    <color key="textColor" red="0.78851395178534167" green="0.4282285760040675" blue="0.231107079201089" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BestScore:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prR-8G-6kZ">
+                                    <rect key="frame" x="0.0" y="91.5" width="269" height="45"/>
+                                    <fontDescription key="fontDescription" name="PLAYPULL" family="PLAYPULL" pointSize="43"/>
+                                    <color key="textColor" red="0.049673996870000001" green="0.4392491281" blue="0.67323160169999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:4:06" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1x-GU-Kga">
+                                    <rect key="frame" x="0.0" y="141.5" width="269" height="34.5"/>
+                                    <fontDescription key="fontDescription" name="FZZJ-TTMBFONT" family="FZZJ-TTMBFONT" pointSize="30"/>
+                                    <color key="textColor" red="0.78830075263977051" green="0.42920398712158203" blue="0.23216819763183594" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="JJo-1a-RtV" firstAttribute="top" secondItem="utV-dO-ohh" secondAttribute="top" constant="430" id="3qH-Pf-Waq"/>
+                        <constraint firstAttribute="trailing" secondItem="utV-dO-ohh" secondAttribute="trailing" constant="30" id="6CI-1M-iMn"/>
+                        <constraint firstAttribute="bottom" secondItem="utV-dO-ohh" secondAttribute="bottom" constant="33" id="9oN-pI-VqN"/>
+                        <constraint firstAttribute="trailing" secondItem="JJo-1a-RtV" secondAttribute="trailing" constant="50" id="NVW-wS-gfB"/>
+                        <constraint firstItem="JJo-1a-RtV" firstAttribute="centerX" secondItem="UvJ-Rg-P1L" secondAttribute="centerX" id="QAP-ha-rX1"/>
+                        <constraint firstItem="utV-dO-ohh" firstAttribute="leading" secondItem="UvJ-Rg-P1L" secondAttribute="leading" constant="30" id="al2-mh-A8Y"/>
+                        <constraint firstAttribute="bottom" secondItem="JJo-1a-RtV" secondAttribute="bottom" id="lG6-Si-rst"/>
+                        <constraint firstAttribute="trailing" secondItem="iOQ-RV-qmc" secondAttribute="trailing" constant="8" id="lIa-VC-uq1"/>
+                        <constraint firstItem="ei6-35-z1o" firstAttribute="centerY" secondItem="utV-dO-ohh" secondAttribute="centerY" constant="20" id="oYJ-bF-TeC"/>
+                        <constraint firstItem="utV-dO-ohh" firstAttribute="top" secondItem="UvJ-Rg-P1L" secondAttribute="top" constant="-22" id="ouD-f3-6BK"/>
+                        <constraint firstItem="ei6-35-z1o" firstAttribute="leading" secondItem="utV-dO-ohh" secondAttribute="leading" constant="20" id="sbI-XA-AIU"/>
+                        <constraint firstItem="iOQ-RV-qmc" firstAttribute="top" secondItem="UvJ-Rg-P1L" secondAttribute="top" constant="22" id="ue3-f9-nDg"/>
+                        <constraint firstItem="ei6-35-z1o" firstAttribute="centerX" secondItem="utV-dO-ohh" secondAttribute="centerX" id="wDx-lO-8cF"/>
+                        <constraint firstAttribute="width" secondItem="UvJ-Rg-P1L" secondAttribute="height" multiplier="309:395" id="wis-C3-cWR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="UvJ-Rg-P1L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="DOa-RU-Ngr"/>
+                <constraint firstItem="UvJ-Rg-P1L" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Zip-r1-Af0"/>
+                <constraint firstItem="UvJ-Rg-P1L" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="u3t-VR-7VW"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="alertbggameover" width="309" height="395.5"/>
+        <image name="closeBtn" width="52" height="52"/>
+        <image name="rankConfirmBg" width="167.5" height="70"/>
+    </resources>
+</document>
