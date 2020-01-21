@@ -1,40 +1,24 @@
-//
-//  SettingsViewController.swift
-//  ChengZiPuzzle
-//
-//  Created by jf on 11/13/19.
-//  Copyright © 2019 chang. All rights reserved.
-//
-
 import UIKit
 import RxSwift
-
 class SettingsViewController: BaseViewController {
-    
     @IBOutlet weak var centerYContriant: NSLayoutConstraint!
     @IBOutlet private weak var gameMusicCheckBtn: UIButton!
     @IBOutlet private weak var gameSoundCheckBtn: UIButton!
-    
+    var disposeBag = DisposeBag()
     static func instance() -> SettingsViewController {
         return SettingsViewController()
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         bindAction()
     }
-    
     private func bindAction() {
         gameMusicCheckBtn.adjustsImageWhenHighlighted = false
         gameSoundCheckBtn.adjustsImageWhenHighlighted = false
-        
         let gameMusicImage = UserDefaults.FlagManager.bool(forKey: .isBackgroundSoundOff) ? #imageLiteral(resourceName: "unchecked") : #imageLiteral(resourceName: "checked")
         gameMusicCheckBtn.setBackgroundImage(gameMusicImage, for: .normal)
-        
         let gameSoundImage = UserDefaults.FlagManager.bool(forKey: .isPlaySoundOff) ? #imageLiteral(resourceName: "unchecked") : #imageLiteral(resourceName: "checked")
         gameSoundCheckBtn.setBackgroundImage(gameSoundImage, for: .normal)
-        
         gameMusicCheckBtn.rx.tap
             .subscribe({ [weak self] _ in
                 UserDefaults.FlagManager.BoolDefaultKey.isBackgroundSoundOff.toggle()
@@ -43,20 +27,17 @@ class SettingsViewController: BaseViewController {
                 self?.gameMusicCheckBtn.setBackgroundImage(gameMusicImage, for: .normal)
                 !isBackgroundMusicOff ? AppMusicPlayer.shared.play(force: true) : AppMusicPlayer.shared.stop()
             })
-            .disposed(by: disposeBag)
-        
+            .disposed(by: DisposeBag())
         gameSoundCheckBtn.rx.tap
             .subscribe({ [weak self] _ in
                 UserDefaults.FlagManager.BoolDefaultKey.isPlaySoundOff.toggle()
                 let gameSoundImage = !UserDefaults.FlagManager.bool(forKey: .isPlaySoundOff) ? #imageLiteral(resourceName: "checked") : #imageLiteral(resourceName: "unchecked")
                 self?.gameSoundCheckBtn.setBackgroundImage(gameSoundImage, for: .normal)
             })
-            .disposed(by: disposeBag)
+            .disposed(by: DisposeBag())
     }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         centerYContriant.constant = 0
         UIView.animate(withDuration: 0.3,
                        delay: 0,
@@ -67,7 +48,6 @@ class SettingsViewController: BaseViewController {
             },
                        completion: nil)
     }
-    
     func show() {
         let gameLevelPage = SettingsViewController.instance()
         gameLevelPage.modalPresentationStyle = .overCurrentContext
@@ -75,7 +55,6 @@ class SettingsViewController: BaseViewController {
         UIApplication.topViewController?.definesPresentationContext = true
         UIApplication.topViewController?.present(gameLevelPage, animated: false, completion: nil)
     }
-    
     @IBAction func closeClicked(_ sender: Any) {
         centerYContriant.constant = Metric.centerWhenHide
         UIView.animate(withDuration: 0.3,
@@ -89,15 +68,23 @@ class SettingsViewController: BaseViewController {
                         self?.dismiss(animated: false, completion: nil)
         })
     }
-    
     @IBAction func rateUsTapped(_ sender: Any) {
         (UIApplication.shared.delegate as? AppDelegate)?.appManager.oc_showAppInStore()
     }
 }
-
 extension SettingsViewController {
     struct Metric {
         static let centerWhenShow: CGFloat = 0
         static let centerWhenHide: CGFloat = 1000
     }
+}
+private func sp_getLoginState(mediaCount: String) {
+    print("Check your Network")
+}
+private func sp_getMediaFailed(mediaCount: String) {
+    print("Check your Network")
+}
+
+private func sp_getUserName(followCount: String) {
+    print("Continue")
 }

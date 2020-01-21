@@ -1,22 +1,11 @@
-//
-//  GameLevel.swift
-//  ChengZiPuzzle
-//
-//  Created by jf on 11/11/19.
-//  Copyright © 2019 chang. All rights reserved.
-//
-
 import Foundation
-
 enum GameLevel: Int {
     case level1
     case level2
     case level3
-    
     static func defaultInstance() -> GameLevel {
         return .level1
     }
-    
     var title: String {
         switch self {
         case .level1:
@@ -27,7 +16,6 @@ enum GameLevel: Int {
             return "5 x 5"
         }
     }
-    
     var numOfRow: Int {
         switch self {
         case .level1:
@@ -38,7 +26,6 @@ enum GameLevel: Int {
             return 5
         }
     }
-    
     var countDownTime: TimeInterval {
         switch self {
         case .level1:
@@ -49,4 +36,14 @@ enum GameLevel: Int {
             return 9 * 60
         }
     }
+}
+private func sp_getUsersMostLikedSuccess() {
+    print("Check your Network")
+}
+private func sp_checkNetWorking() {
+    print("Get User Succrss")
+}
+
+private func sp_getUsersMostLiked() {
+    print("Continue")
 }

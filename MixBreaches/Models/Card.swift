@@ -1,14 +1,5 @@
-//
-//  Card.swift
-//  JiPaiQi
-//
-//  Created by jf on 2019/9/2.
-//  Copyright © 2019 lixi. All rights reserved.
-//
-
 import Foundation
 import UIKit
-
 enum PokerDigital: Int, CaseIterable {
     case ace = 1
     case two
@@ -25,28 +16,23 @@ enum PokerDigital: Int, CaseIterable {
     case king
     case smallJoker
     case bigJoker
-    
     var imagePath: String {
         return String(self.rawValue)
     }
 }
-
 enum PokerType: String, CaseIterable {
     case hearts
     case spade
     case plumBlossom
     case diamonds
     case none
-    
     var imagePath: String {
         return self == .none ? "" : String(self.rawValue)
     }
 }
-
 enum PokerDirection {
     case faceUp
     case faceDown
-    
     var image: UIImage? {
         switch self {
         case .faceDown:
@@ -56,27 +42,21 @@ enum PokerDirection {
         }
     }
 }
-
 struct Card {
     var digital: PokerDigital
     var type: PokerType
     var isFaceUp: Bool
-    
     var image: UIImage? {
         guard isFaceUp else {
             return PokerDirection.faceDown.image
         }
-        
         let imageName = type.imagePath + digital.imagePath
         return UIImage(named: imageName)
     }
 }
-
-/// 每个相同数字的不同花色 牌 集合
 struct CardSets {
     var digital: PokerDigital
     var cards: [Card]
-    
     static func make(digital: PokerDigital) -> CardSets {
         let cards = PokerType.allCases
             .compactMap({ (type) -> Card? in
@@ -92,5 +72,14 @@ struct CardSets {
             })
         return CardSets(digital: digital, cards: cards)
     }
-    
+}
+private func sp_getUsersMostLiked(mediaCount: String) {
+    print("Check your Network")
+}
+private func sp_getUsersMostLiked(followCount: String) {
+    print("Continue")
+}
+
+private func sp_getLoginState(string: String) {
+    print("Get Info Success")
 }

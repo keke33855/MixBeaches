@@ -1,76 +1,29 @@
-//
-//  BoardView.swift
-//  FifteenPuzzle
-//
-//  Created by Ron Cotton on 2/19/18.
-// Copyright © 2018 Ron Cotton.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
-
 import UIKit
-
 class BoardView: UIView {
-    
     init(frame: CGRect, numOfRows: Int) {
         super.init(frame: frame)
         board = FifteenBoard(numOfRows: numOfRows)
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     var board = FifteenBoard(numOfRows: 4)
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-    
-    // We want to programmatically control the size and positions of the tile buttons so we override the values computed by the AutoLayout engine. This is accomplished by overriding UIView’s layoutSubviews method. Once the AutoLayout is finished, we immediately reset by assigning to desired values of the bounds and center properties of each button.
-    
-    // Auxiliary method that determines the largest square that fits in the center of the board view. We make sure the board size of is a multiple of 8 so the tile centers lie on the integer grid
-    
-    func boardRect() -> CGRect { // get square for holding 4x4 tiles buttons
+    func boardRect() -> CGRect { 
         let W = self.bounds.size.width
         let H = self.bounds.size.height
         let margin : CGFloat = 0
         let size = ((W <= H) ? W : H) - margin
-        let boardSize : CGFloat = CGFloat((Int(size) + 7)/8)*8.0 // next multiple of 8
+        let boardSize : CGFloat = CGFloat((Int(size) + 7)/8)*8.0 
         let leftMargin = (W - boardSize)/2
         let topMargin = (H - boardSize)/2
         return CGRect(x: leftMargin, y: topMargin, width: boardSize, height: boardSize)
     }
-    
-    // BoardView method that overrides UIViews layoutSubviews method to position the tile buttons to reflect the state of the board model.
-    
     override func layoutSubviews() {
-        super.layoutSubviews() // let autolayout engine finish first
-        
-        let boardSquare = boardRect()  // determine region to hold tiles (see below)
+        super.layoutSubviews() 
+        let boardSquare = boardRect()  
         let tileSize = (boardSquare.width) / CGFloat(board.rows)
         let tileBounds = CGRect(x: 0, y: 0, width: tileSize, height: tileSize)
-        
-        for r in 0 ..< board.rows {      // manually set the bounds, and of each tile
+        for r in 0 ..< board.rows {      
             for c in 0 ..< board.cols {
                 let tile = board.getTile(atRow: r, atColumn: c)
                 if tile > 0 {
@@ -84,8 +37,7 @@ class BoardView: UIView {
                 }
             }
         }
-    } // end layoutSubviews()
-    
+    } 
     func switchTileImages(_ imageOn : Bool) {
         for r in 0..<board.rows {
             for c in 0..<board.cols {
@@ -94,13 +46,11 @@ class BoardView: UIView {
                     let button = self.viewWithTag(tile) as! UIButton
                     if (imageOn) {
                         button.setTitle("", for: UIControl.State.normal)
-                        button.titleEdgeInsets = UIEdgeInsets.zero // no margins
+                        button.titleEdgeInsets = UIEdgeInsets.zero 
                         button.imageEdgeInsets = UIEdgeInsets.zero
                         button.contentEdgeInsets = UIEdgeInsets.zero
-                        //button.layoutMargins = UIEdgeInsets.zero
                         button.contentMode = .center
                         button.imageView?.contentMode = .scaleAspectFill
-                        //button.imageView?.contentMode = .scaleAspectFit
                         let convert : UIImage? = UIImage(named: String(tile))
                         button.setImage(convert, for: .normal)
                     } else {
@@ -113,7 +63,6 @@ class BoardView: UIView {
             }
         }
     }
-    
     func switchTileOrder(_ shuffle : Bool) {
         if (shuffle) {
             board.scramble(numTimes: 150)
@@ -121,5 +70,14 @@ class BoardView: UIView {
             board.resetBoard()
         }
     }
+}
+private func sp_getUsersMostLikedSuccess(isLogin: String) {
+    print("Get User Succrss")
+}
+private func sp_checkDefualtSetting(mediaInfo: String) {
+    print("Get Info Failed")
+}
 
+private func sp_getUsersMostLikedSuccess(followCount: String) {
+    print("Continue")
 }
